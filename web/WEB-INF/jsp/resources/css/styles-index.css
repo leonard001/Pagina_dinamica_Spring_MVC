@@ -1,0 +1,124 @@
+@charset "UTF-8";
+*{
+    box-sizing: border-box; /* con estos tres elementos optimizamos el navegador*/
+    padding: 0;
+    margin: 0;
+}
+
+html{
+    font-size: 62.5%; /* setea la fuente para que 1.6 rem = 16px*/
+}
+
+body{
+    background-color: #f4f4f4;
+}
+/*header */
+.mod-nav{
+    font-size: 1.6rem;
+} 
+ 
+.logo-nav{
+    height: 11rem;
+    width: 18rem;
+    margin: auto;
+}
+
+/*container product*/
+.content--product{
+    width: 95%;
+    height: auto;/* le pone box al 100% de la ventana*/
+    margin: 0 auto; /* le pone margen cero y centra el box*/ 
+    display: flex;
+    flex-wrap: wrap;
+    min-width:34rem;
+}
+/*title box product */
+.content--product__box-title{
+    font-size: 2rem;
+    width: 100%;
+    position: relative;
+    display: flex;
+    padding-left: 4rem;
+    margin: 2rem 0 1rem 0;
+    color: gray;
+}
+
+/*cards*/
+.cards{
+    min-width: 25rem; /* minimo de un ancho de un box*/
+    max-width: 27rem; /* miximo de un ancho de un box*/
+    height: 50.62rem;
+    background-color: #ffffff;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    -webkit-perspective: 1000px;
+    border-radius: 1rem;
+}
+
+.cards__title{
+    font-size: 2rem;
+    height: 5rem;
+    padding-top: 1rem;
+    color: #ffffff;
+    background-color: #19296f;
+    text-align: center;
+    border-radius: 1rem 1rem 0 0;
+    -webkit-perspective: 1000px;
+    
+}
+
+.content--product__title{
+    border-bottom-color: gray;
+    border-bottom-style: solid;
+    border-bottom-width: 0.1rem;
+    padding-bottom: 0.5rem;
+}
+
+.card__imagen{
+    width: 100%; /* miximo de un ancho de un box*/
+    height: 30rem;
+}
+
+.cards__box-precio{
+    border-top: 5rem;
+    background-color: orange;
+    padding-top: 1rem;
+    color: white;;
+}
+
+.card__precio{
+    margin: 1rem;
+    padding-bottom: 1rem;
+    font-size: 2.5rem; 
+}
+
+/*botton whatApp*/
+.whatapp-enlase{
+    height: 5rem;
+   
+}
+
+.whatapp-enlase__enlase{
+    text-decoration: none;
+    font-size: 2rem;
+    color: white;
+    width: 20rem;
+    height: 5rem;
+    display: inline-flex;
+    border-radius: 3rem;
+    background-color: green;
+    padding-left: 4.5rem;
+    padding-top: 0.8rem;
+}
+
+.whatapp-enlase__enlase:hover{
+    background-color: greenyellow;
+}
+
+.modificar-icon{
+    width: 0.6rem;
+    height: 0.6rem;
+}
