@@ -2,9 +2,13 @@
 package Controller;
 
 import Config.Conectar;
+import static com.sun.xml.internal.ws.api.message.Packet.Status.Request;
 import java.util.List;
+import model.products;
+import model.productsDAO;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -15,26 +19,30 @@ import org.springframework.web.servlet.ModelAndView;
 public class ControllerIndex {
     
     Conectar con = new Conectar();
-    JdbcTemplate jdbctemplate = new JdbcTemplate(con.Conectar());
+    products pro = new products();
+    productsDAO prDAO = new productsDAO();
     ModelAndView mav = new ModelAndView();
     
     
     @RequestMapping(value = "/", method = RequestMethod.GET)
-    public ModelAndView Listar(){
-        String sql = "SELECT * FROM productos";
-        List datos = this.jdbctemplate.queryForList(sql);
-        mav.addObject("lista",datos);
-        mav.setViewName("index");
-        return mav;
+    public String Listar(Model model){
+        List<products>datos = prDAO.listar();
+        model.addAttribute("lista",datos);
+        return "index";
     }
     
     @RequestMapping("index.htm")
-    public ModelAndView Lista() {
-        String sql = "SELECT * FROM productos";
-        List datos = this.jdbctemplate.queryForList(sql);
-        mav.addObject("lista", datos);
-        mav.setViewName("index");
-        return mav;
+    public String Lista(Model model){
+        List<products>datos = prDAO.listar();
+        model.addAttribute("lista",datos);
+        return "index";
+    }
+    
+   /* @RequestMapping(value = "/imagen", method = RequestMethod.GET)
+    public String imagen(@RequestParam("valorUno") String valorU){
+        int id = Integer.parseInt(valorU);
+        prDAO.listarImg(id, response);
+        return "index";
     }
     
     /*@RequestMapping(value = "suma", method = RequestMethod.POST)

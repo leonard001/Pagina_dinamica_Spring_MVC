@@ -12,7 +12,6 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class ControllerAboutUs {
     Conectar con = new Conectar();
-    JdbcTemplate jdbctemplate = new JdbcTemplate(con.Conectar());
     ModelAndView mav = new ModelAndView();
     
     @RequestMapping(value = "/quienesSomos", method = RequestMethod.GET)

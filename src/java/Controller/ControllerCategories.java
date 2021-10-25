@@ -13,7 +13,6 @@ import org.springframework.web.servlet.ModelAndView;
 public class ControllerCategories {
     
     Conectar con = new Conectar();
-    JdbcTemplate jdbctemplate = new JdbcTemplate(con.Conectar());
     ModelAndView mav = new ModelAndView();
     
     

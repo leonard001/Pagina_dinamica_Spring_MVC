@@ -16,7 +16,9 @@
         <title>Madeparq</title>
         <!-- Bootstrap CSS -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-        <style><%@include file="resources/css/styles-index.css"%></style>
+        <style>
+            <%@include file="resources/css/styles-index.css"%>
+        </style>
         <!-- Icon -->
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     </head>
@@ -34,7 +36,7 @@
             </div>
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="<c:out value="${pageContext.request.contextPath}/resources/img/Carrusel_1.jpg" />" class="dblock w-100" alt="Foto de carrucel uno">
+                    <img src="" class="dblock w-100" alt="Foto de carrucel uno">
                 </div>
                 <div class="carousel-item">
                     <img src="<c:out value="${pageContext.request.contextPath}/resources/img/Carrusel_2.jpg" />" class="d-block w-100" alt="Foto de carrucel dos">
@@ -79,12 +81,12 @@
             <c:forEach  var="dato" items="${lista}">
                 <label class="cards card--modifier">
                     <div class="cards__title">
-                        <span class="cards__span"><strong>${dato.proNombre}</strong></span>
+                        <span class="cards__span"><strong>${dato.getNombre()}</strong></span>
                     </div>
-                    <img class="card__imagen" src="${dato.proPrecio}">
+                    <img class="card__imagen" src="${dato.getImg()}">
                     <div class="cards__box-precio">
                         <h2 class="card__text-precio">Valor:</h2>
-                        <h2 class="card__precio">${dato.proPrecio}</h2>
+                        <h2 class="card__precio">${dato.getPrecio()}</h2>
                     </div>
                     <label class="whatapp-enlase">
                         <a class="whatapp-enlase__enlase"><span class="material-icons-outlined">Ir a whatApp</span>
@@ -114,11 +116,11 @@
                         <tbody>
                             <c:forEach  var="dato" items="${lista}">
                                 <tr>
-                                    <td>${dato.id}</td>
-                                    <td>${dato.proNombre}</td>
-                                    <td>${dato.proCantidad}</td>
-                                    <td>${dato.proPrecio}</td>
-                                    <td>${dato.proEstado}</td>
+                                    <td>${dato.getId()}</td>
+                                    <td>${dato.getNombre()}</td>
+                                    <td>${dato.getCantidad()}</td>
+                                    <td>${dato.getPrecio()}</td>
+                                    <td>${dato.getEstado()}</td>
                                     <td>
                                         <a class="btn btn-warning">Delete</a>
                                         <a class="btn btn-danger">Edit</a>

@@ -1,18 +1,21 @@
 
 package model;
 
-import javax.swing.ImageIcon;
+import java.io.InputStream;
 
 public class products {
     
-    private int id;
+    private String id;
     private String nombre;
     private String cantidad;
     private String precio;
-    private ImageIcon img;
-    private String estado;
+    private InputStream img;
+    private String estado; 
     
-    public products(int id, String nombre, String cantidad, String precio, ImageIcon img, String estado) {
+    public products(){
+    }
+    
+    public products(String id, String nombre, String cantidad, String precio, InputStream img, String estado) {
         this.id = id;
         this.nombre = nombre;
         this.cantidad = cantidad;
@@ -21,11 +24,11 @@ public class products {
         this.estado = estado;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -53,11 +56,11 @@ public class products {
         this.precio = precio;
     }
 
-    public ImageIcon getImg() {
+    public InputStream getImg() {
         return img;
     }
 
-    public void setImg(ImageIcon img) {
+    public void setImg(InputStream img) {
         this.img = img;
     }
     
