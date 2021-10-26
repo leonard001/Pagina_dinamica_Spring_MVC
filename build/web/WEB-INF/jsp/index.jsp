@@ -17,7 +17,7 @@
         <!-- Bootstrap CSS -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
         <style>
-            <%@include file="resources/css/styles-index.css"%>
+            <%@include file="../../resources/css/styles-index.css"%>
         </style>
         <!-- Icon -->
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -36,7 +36,7 @@
             </div>
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="" class="dblock w-100" alt="Foto de carrucel uno">
+                    <img src="${pageContext.request.contextPath}/resources/img/Carrusel_1.jpg" class="dblock w-100" alt="Foto de carrucel uno">
                 </div>
                 <div class="carousel-item">
                     <img src="<c:out value="${pageContext.request.contextPath}/resources/img/Carrusel_2.jpg" />" class="d-block w-100" alt="Foto de carrucel dos">
@@ -83,7 +83,7 @@
                     <div class="cards__title">
                         <span class="cards__span"><strong>${dato.getNombre()}</strong></span>
                     </div>
-                    <img class="card__imagen" src="${dato.getImg()}">
+                    <img class="card__imagen" src="imagen?id=${dato.getId()}">
                     <div class="cards__box-precio">
                         <h2 class="card__text-precio">Valor:</h2>
                         <h2 class="card__precio">${dato.getPrecio()}</h2>
@@ -139,7 +139,7 @@
         <!-- javaScrpt of bootstrap -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
         <script>
-            <%@include file="resources/js/funciones.js"%>
+            <%@include file="../../resources/js/funciones.js"%>
         </script>
     </body>
 </html>

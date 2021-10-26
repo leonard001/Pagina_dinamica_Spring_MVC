@@ -4,6 +4,7 @@ package Controller;
 import Config.Conectar;
 import static com.sun.xml.internal.ws.api.message.Packet.Status.Request;
 import java.util.List;
+import javax.servlet.http.HttpServletResponse;
 import model.products;
 import model.productsDAO;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -29,6 +30,12 @@ public class ControllerIndex {
         List<products>datos = prDAO.listar();
         model.addAttribute("lista",datos);
         return "index";
+    }
+    
+    @RequestMapping(value = "imagen", method = RequestMethod. GET)
+    public void imagen(@RequestParam("id") String id, HttpServletResponse response){
+        int idImagen = Integer.parseInt(id);
+        prDAO.listarImg(idImagen, response);
     }
     
     @RequestMapping("index.htm")

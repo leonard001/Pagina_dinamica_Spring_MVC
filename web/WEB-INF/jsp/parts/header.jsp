@@ -3,7 +3,7 @@
 <header>
     <nav class="navbar navbar-expand-lg navbar-light bg-light mod-nav">
         <div class="container-fluid">
-            <img src="/img/logo.png" class="logo-nav" alt="Logo de la empresa">
+            <img src="${pageContext.request.contextPath}/resources/img/logo.png" class="logo-nav" alt="Logo de la empresa">
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>

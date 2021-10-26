@@ -16,6 +16,10 @@
     <context:component-scan base-package="Controller"/>
     <mvc:annotation-driven/>
     
+    <!-- podemos trabajar con todos los recursos del proyecto -->
+    <mvc:annotation-driven />
+    <mvc:resources mapping="/resources/**" location="/resources/" /> 
+    
     <!-- para declarar paginas estaticas y pode llamarlas con /xxx.htm -->
     <bean class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping" />
     <bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter" />
